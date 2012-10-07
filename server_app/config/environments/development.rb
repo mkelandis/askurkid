@@ -34,4 +34,17 @@ ServerApp::Application.configure do
 
   # Expands the lines which load the assets
   config.assets.debug = true
+
+  # action mailer config
+  config.action_mailer.perform_deliveries = true 
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+  :address              => "mail.hintersphere.com",
+  :port                 => 25,
+  :domain               => 'hintersphere.com',
+  :user_name            => 'auk+hintersphere.com',
+  :password             => '@skurk1d',
+  :authentication       => 'plain',
+  :enable_starttls_auto => false}
 end
